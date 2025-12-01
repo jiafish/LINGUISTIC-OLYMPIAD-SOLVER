@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>Linguistic Olympiad Solver</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- 字型：VT323 和 Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- 外部 CSS 檔案 -->
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+  <!-- ===== 頁面 1：上傳題目 ===== -->
+  <section id="page-upload" class="page active">
+    <div class="container">
+      <div class="title">LINGUISTIC OLYMPIAD SOLVER</div>
+      <div class="subtitle">Powered by LLM · Upload a problem to begin</div>
+
+      <!-- 題型選擇 Tabs -->
+      <div class="tabs-container">
+        <div class="tabs" id="problem-type-tabs">
+          <button type="button" class="tab-btn active" data-type="Phonology">Phonology</button>
+          <button type="button" class="tab-btn" data-type="Semantics">Semantics</button>
+          <button type="button" class="tab-btn" data-type="Morphology">Morphology</button>
+          <button type="button" class="tab-btn" data-type="Numbers">Numbers</button>
+          <button type="button" class="tab-btn" data-type="Compounding">Compounding</button>
+          <button type="button" class="tab-btn" data-type="Syntax">Syntax</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <form id="solve-form">
+          <div class="upload-section">
+            <!-- 題目檔案上傳區 -->
+            <div class="upload-area" id="problem-upload-area">
+              <h3>UPLOAD PROBLEM</h3>
+              <p>Click or drag your PDF here</p>
+              <input type="file" id="problem-input" class="file-input" accept="application/pdf">
+              <div class="file-info" id="problem-file-info">
+                <div class="file-name">
+                  <span id="problem-file-name"></span>
+                </div>
+                <div class="file-actions">
+                  <button type="button" class="btn btn-secondary btn-icon" id="problem-remove-btn">
+                    <span class="material-icons">delete</span>
+                  </button>
+                  <button type="button" class="btn btn-secondary btn-icon" id="problem-reupload-btn">
+                    <span class="material-icons">refresh</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- 答案檔案上傳區 -->
+            <div class="upload-area" id="answer-upload-area">
+              <h3>UPLOAD ANSWER</h3>
+              <p>Click or drag your PDF here</p>
+              <input type="file" id="answer-input" class="file-input" accept="application/pdf">
+              <div class="file-info" id="answer-file-info">
+                <div class="file-name">
+                  <span id="answer-file-name"></span>
+                </div>
+                <div class="file-actions">
+                  <button type="button" class="btn btn-secondary btn-icon" id="answer-remove-btn">
+                    <span class="material-icons">delete</span>
+                  </button>
+                  <button type="button" class="btn btn-secondary btn-icon" id="answer-reupload-btn">
+                    <span class="material-icons">refresh</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" id="solve-btn">
+            SOLVE
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 頁面 2：Loading ===== -->
+  <section id="page-loading" class="page">
+    <div class="container">
+      <div class="loading-container">
+        <div class="loading-text">
+          Loading<span class="loading-dots"></span>
+        </div>
+
+        <div class="fun-fact-card" id="fun-fact-card">
+          <strong>Linguistic Fun Fact!</strong>
+          <span id="fun-fact-text"></span>
+        </div>
+
+        <button type="button" class="btn btn-secondary" id="cancel-btn">
+          CANCEL
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 頁面 3：結果 ===== -->
+  <section id="page-result" class="page">
+    <div class="container">
+      <div class="title">SOLUTION</div>
+      <div class="subtitle">Model's problem-solving process</div>
+
+      <div class="card">
+        <div class="result-section" id="analysis-section">
+          <h2>Problem Analysis</h2>
+          <div id="analysis-content" class="result-content">
+            <!-- API回傳的分析內容會顯示在這裡 -->
+          </div>
+        </div>
+
+        <div class="result-section" id="steps-section">
+          <h2>Step-by-Step Solution</h2>
+          <div id="steps-content" class="result-content">
+            <!-- API回傳的步驟內容會顯示在這裡 -->
+          </div>
+        </div>
+
+        <div class="result-section" id="final-section">
+          <h2>Final Answer</h2>
+          <div id="final-content" class="result-content">
+            <!-- API回傳的最終答案會顯示在這裡 -->
+          </div>
+        </div>
+
+        <div class="result-actions">
+          <button type="button" class="btn btn-secondary" id="download-pdf-btn">
+            <span class="material-icons" style="vertical-align: middle; margin-right: 4px;">download</span>
+            DOWNLOAD PDF
+          </button>
+          <button type="button" class="btn btn-primary" id="new-problem-btn">
+            NEW PROBLEM
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 外部 JavaScript 檔案 -->
+  <script src="scripts/main.js"></script>
+</body>
+</html>
