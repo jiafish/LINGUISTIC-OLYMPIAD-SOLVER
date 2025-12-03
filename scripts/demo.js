@@ -347,10 +347,18 @@ Finally, we apply the discovered rule to solve the specific problem at hand.`,
 The final answer follows the established pattern and can be verified through the methodology outlined above. All transformations are consistent with the identified linguistic rules.`
       };
 
-      // 顯示假資料
-      analysisContent.textContent = updatedDemoData.problemAnalysis;
-      stepsContent.textContent = updatedDemoData.stepByStepSolution;
-      finalContent.textContent = updatedDemoData.finalAnswer;
+
+      
+     // 顯示假資料（只在有元素時才塞內容）
+        if (analysisContent) {
+          analysisContent.textContent = updatedDemoData.problemAnalysis;
+        }
+        if (stepsContent) {
+          stepsContent.textContent = updatedDemoData.stepByStepSolution;
+        }
+        if (finalContent) {
+          finalContent.textContent = updatedDemoData.finalAnswer;
+        }
 
       // 調整結果區塊高度
       adjustResultSections();
@@ -365,7 +373,7 @@ The final answer follows the established pattern and can be verified through the
     }, 10000); // 10秒
   });
 
-  
+
   // ============================================================================
   // 調整結果區塊高度
   // ============================================================================
@@ -374,10 +382,13 @@ The final answer follows the established pattern and can be verified through the
     
     sections.forEach(sectionId => {
       const section = document.getElementById(sectionId);
+      if (!section) return;              // ★ 沒有這個區塊就跳過
+  
       const content = section.querySelector('.result-content');
+      if (!content) return;
+  
       const contentHeight = content.scrollHeight;
-      
-      // 設定高度範圍：最小300px，最大1080px
+  
       if (contentHeight < 300) {
         section.style.minHeight = '300px';
       } else if (contentHeight > 1080) {
