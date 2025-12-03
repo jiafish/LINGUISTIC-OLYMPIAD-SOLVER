@@ -39,26 +39,26 @@ document.addEventListener('DOMContentLoaded', function() {
   // Linguistic Fun Facts 資料（20組）
   // ============================================================================
   const funFacts = [
-    "'Pneumonoultramicroscopicsilicovolcanoconiosis' is one of the longest words in the English dictionary.",
-    "Some languages like Pirahã are argued to have no exact number words.",
-    "In many languages, word order changes meaning more than word endings.",
-    "Sign languages have their own grammars, not just 'signed versions' of spoken languages.",
-    "There are over 7,000 languages spoken in the world today.",
-    "The word 'set' has the most definitions in the Oxford English Dictionary (over 400).",
-    "Some languages, like Finnish, can form extremely long words through compounding.",
-    "The Rosetta Stone was crucial in deciphering Egyptian hieroglyphs.",
-    "Linguistic diversity is decreasing rapidly—one language dies every two weeks.",
-    "Whistled languages exist in several cultures, such as Silbo Gomero in the Canary Islands.",
-    "The sentence 'Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo' is grammatically correct in English.",
-    "Some languages have more than 100 different pronouns.",
-    "The word 'literally' is now often used to mean its opposite ('figuratively').",
-    "Clicks are used as consonants in several African languages, like Xhosa and Zulu.",
-    "Some languages don't have words for 'left' and 'right', using cardinal directions instead.",
-    "The word 'orange' didn't have a name until the fruit was introduced—it was just 'yellow-red'.",
-    "Pirahã language may lack recursion, challenging some theories of universal grammar.",
-    "Some languages use tone to distinguish meaning, like Mandarin Chinese with four tones.",
-    "The Sapir-Whorf hypothesis suggests language shapes our perception of reality.",
-    "Palindromes exist in many languages—words or phrases that read the same backward and forward."
+    "起來活動筋骨，休息是為了走更長遠的路。",
+    "保持耐心。 最棒的旅程總是需要一點時間準備",
+    "聽點音樂。 讓節奏感為你的下一題暖場",
+    "思考你的策略。 下一步該怎麼做？提前規劃是成功的關鍵。",
+    "感謝你的等待。 我們正在努力讓你盡快回到語奧遊戲中！",
+    "保持專注。 一個小小的細節可能就是解題的關鍵。",
+    "偶爾改變一下思路，或許會有意想不到的收穫。",
+    "深呼吸。 讓自己放鬆，享受接下來的語奧時光。",
+    "你知道語奧的縮寫是IOL而不是ILO嗎。",
+    "第一屆國際語奧於2003年的保加利亞舉辦。",
+    "很多的科學奧林匹亞起源於東歐的共產主義國家，目的是為了在冷戰時期與西方國家在科學和教育領域較量。",
+    "語奧分為個人賽跟團體賽，時長分別為6小時及4小時。",
+    "吃飽睡好，才是衝到最後的秘訣。",
+    "2025年的語奧主辦國是台灣喔！",
+    "參賽者可以選擇任一語言的題本作答。",
+    "語奧不會使用人造或是虛構的語言出題。",
+    "語奧每隊有四個人，一個國家最多可以派出兩隊。",
+    "語奧的開幕典禮上，會有關於今年題目的小提示。",
+    "每年2-3月台灣會舉辦語奧初選。",
+    "台灣語奧的網站上有台灣初選的歷屆試題。"
   ];
 
   // ============================================================================

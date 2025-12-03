@@ -54,26 +54,26 @@ document.addEventListener('DOMContentLoaded', function() {
   // Linguistic Fun Facts 資料（20組）
   // ============================================================================
   const funFacts = [
-    "'Pneumonoultramicroscopicsilicovolcanoconiosis' is one of the longest words in the English dictionary.",
-    "Some languages like Pirahã are argued to have no exact number words.",
-    "In many languages, word order changes meaning more than word endings.",
-    "Sign languages have their own grammars, not just 'signed versions' of spoken languages.",
-    "There are over 7,000 languages spoken in the world today.",
-    "The word 'set' has the most definitions in the Oxford English Dictionary (over 400).",
-    "Some languages, like Finnish, can form extremely long words through compounding.",
-    "The Rosetta Stone was crucial in deciphering Egyptian hieroglyphs.",
-    "Linguistic diversity is decreasing rapidly—one language dies every two weeks.",
-    "Whistled languages exist in several cultures, such as Silbo Gomero in the Canary Islands.",
-    "The sentence 'Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo' is grammatically correct in English.",
-    "Some languages have more than 100 different pronouns.",
-    "The word 'literally' is now often used to mean its opposite ('figuratively').",
-    "Clicks are used as consonants in several African languages, like Xhosa and Zulu.",
-    "Some languages don't have words for 'left' and 'right', using cardinal directions instead.",
-    "The word 'orange' didn't have a name until the fruit was introduced—it was just 'yellow-red'.",
-    "Pirahã language may lack recursion, challenging some theories of universal grammar.",
-    "Some languages use tone to distinguish meaning, like Mandarin Chinese with four tones.",
-    "The Sapir-Whorf hypothesis suggests language shapes our perception of reality.",
-    "Palindromes exist in many languages—words or phrases that read the same backward and forward."
+    "起來活動筋骨，休息是為了走更長遠的路。",
+    "保持耐心。 最棒的旅程總是需要一點時間準備",
+    "聽點音樂。 讓節奏感為你的下一題暖場",
+    "思考你的策略。 下一步該怎麼做？提前規劃是成功的關鍵。",
+    "感謝你的等待。 我們正在努力讓你盡快回到語奧遊戲中！",
+    "保持專注。 一個小小的細節可能就是解題的關鍵。",
+    "偶爾改變一下思路，或許會有意想不到的收穫。",
+    "深呼吸。 讓自己放鬆，享受接下來的語奧時光。",
+    "你知道語奧的縮寫是IOL而不是ILO嗎。",
+    "第一屆國際語奧於2003年的保加利亞舉辦。",
+    "很多的科學奧林匹亞起源於東歐的共產主義國家，目的是為了在冷戰時期與西方國家在科學和教育領域較量。",
+    "語奧分為個人賽跟團體賽，時長分別為6小時及4小時。",
+    "吃飽睡好，才是衝到最後的秘訣。",
+    "2025年的語奧主辦國是台灣喔！",
+    "參賽者可以選擇任一語言的題本作答。",
+    "語奧不會使用人造或是虛構的語言出題。",
+    "語奧每隊有四個人，一個國家最多可以派出兩隊。",
+    "語奧的開幕典禮上，會有關於今年題目的小提示。",
+    "每年2-3月台灣會舉辦語奧初選。",
+    "台灣語奧的網站上有台灣初選的歷屆試題。"
   ];
 
   // ============================================================================
@@ -314,10 +314,13 @@ document.addEventListener('DOMContentLoaded', function() {
       //   "stepByStepSolution": "步驟內容...",
       //   "finalAnswer": "最終答案..."
       // }
+
+
+      // analysisContent.textContent = data.problemAnalysis || data.analysis || data.problem_analysis || '(未回傳分析內容)';
       
-      analysisContent.textContent = data.problemAnalysis || data.analysis || data.problem_analysis || '(未回傳分析內容)';
-      stepsContent.textContent = data.stepByStepSolution || data.steps || data.step_by_step_solution || '(未回傳步驟內容)';
-      finalContent.textContent = data.finalAnswer || data.answer || data.final_answer || '(未回傳最終答案)';
+      stepsContent.innerHTML = data.stepByStepSolution ||  '<p class="text-gray-500">(未回傳分析內容)</p>'
+          
+      // finalContent.textContent = data.finalAnswer || data.answer || data.final_answer || '(未回傳最終答案)';
 
       // 調整結果區塊高度（根據內容自動調整，限制在300px-1080px之間）
       adjustResultSections();
@@ -341,8 +344,8 @@ document.addEventListener('DOMContentLoaded', function() {
   // 調整結果區塊高度
   // ============================================================================
   function adjustResultSections() {
-    const sections = ['analysis-section', 'steps-section', 'final-section'];
-    
+    // const sections = ['analysis-section', 'steps-section', 'final-section'];
+    const sections = ['steps-section'];
     sections.forEach(sectionId => {
       const section = document.getElementById(sectionId);
       const content = section.querySelector('.result-content');
@@ -378,9 +381,9 @@ document.addEventListener('DOMContentLoaded', function() {
     apiResponseData = null;
     problemFileInfo.classList.remove('active');
     answerFileInfo.classList.remove('active');
-    analysisContent.textContent = '';
+    // analysisContent.textContent = '';
     stepsContent.textContent = '';
-    finalContent.textContent = '';
+    // finalContent.textContent = '';
     showPage('upload');
   });
 
@@ -418,7 +421,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // ========================================================================
       // 如果沒有後端PDF生成API，可以考慮在前端使用jsPDF生成
       // 目前先顯示Alert提示
-      alert('PDF下載功能需串接後端API或使用前端PDF生成庫（如jsPDF）');
+      // alert('PDF下載功能需串接後端API或使用前端PDF生成庫（如jsPDF）');
       
       // 以下是使用jsPDF的範例（需要引入jsPDF庫）：
       // import jsPDF from 'jspdf';
@@ -426,6 +429,95 @@ document.addEventListener('DOMContentLoaded', function() {
       // doc.text('Problem Analysis', 10, 10);
       // doc.text(apiResponseData.problemAnalysis, 10, 20);
       // doc.save('solution.pdf');
+      
+    
+      // 1. 取得你要輸出的三個區塊的 DOM
+      // const analysisContent = document.getElementById('analysis-content');
+      // const stepsContent = document.getElementById('steps-content');
+      // const finalContent = document.getElementById('final-content');
+
+      // 檢查是否有內容，避免報錯
+      if (!stepsContent) {
+          alert("請先產生解題結果再下載！");
+          return;
+      }
+
+      // 2. 建立一個暫時的容器 (這個 div 不會顯示在畫面上，純粹為了排版 PDF)
+      const elementToPrint = document.createElement('div');
+      
+      // 加入一些 CSS 樣式讓 PDF 好看一點 (padding, 字體等)
+      elementToPrint.style.cssText = `
+        width: 100%;
+        margin: 0; 
+        padding: 0;
+        font-family: 'Microsoft JhengHei', sans-serif;
+        color: #333;
+        background: white; /* 確保背景是白的 */
+      `;
+      const styleContent = `
+        <style>
+            /* 針對所有段落、標題、列表項目、表格行，設定「不可被切斷」 */
+            p, h1, h2, h3, h4, h5, h6, li, tr, blockquote {
+                page-break-inside: avoid;
+                break-inside: avoid; 
+            }
+            
+            /* 確保圖片也不會被切一半 */
+            img {
+                page-break-inside: avoid;
+                max-width: 100% !important;
+            }
+
+            /* 修正標題 margin 導致的頂部空白問題 */
+            h1 { margin-top: 0; padding-top: 20px; }
+            
+            /* 優化排版 */
+            .section-container { margin-bottom: 30px; }
+            .content-box { font-size: 14px; line-height: 1.6; }
+        </style>
+      `;
+      // 3. 組合內容 (使用 innerHTML 把剛剛後端傳來的 HTML 塞進去)
+      // 你可以自己加 <h2> 標題讓 PDF 結構更清楚
+      elementToPrint.innerHTML = `
+        ${styleContent}
+        <div style="padding: 20px;">
+            <h1 style="text-align: center; border-bottom: 2px solid #333; padding-bottom: 10px;">語奧解題報告</h1>
+            
+            
+            
+            <div class="section-container">
+                <h2 style="color: #2c3e50; border-left: 5px solid #2c3e50; padding-left: 10px;">逐步詳解</h2>
+                <div class="content-box">${stepsContent.innerHTML}</div>
+            </div>
+            
+    
+        </div>
+      `;
+
+    // 4. 設定 PDF 選項
+    const opt = {
+        margin:       10, // 頁面邊距
+        filename:     '解題結果.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { 
+            scale: 2, 
+            useCORS: true,
+            scrollY: 0 // 【重要】防止因為捲動位置導致的空白
+        },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        
+        // 【修正 3】啟用 pagebreak 功能
+        // mode: 'avoid-all' 會盡量不切斷任何元素
+        // mode: 'css' 會尊照我們上面寫的 page-break-inside: avoid
+        pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] } 
+    };
+
+    // 5. 執行轉換並下載
+    // .set(opt) -> 設定參數
+    // .from(elementToPrint) -> 指定要轉的元素 (就是我們剛剛組出來的那個)
+    // .save() -> 下載
+    html2pdf().set(opt).from(elementToPrint).save();
+// });
 
     } catch (error) {
       console.error('PDF下載錯誤:', error);
