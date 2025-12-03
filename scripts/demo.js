@@ -413,17 +413,24 @@ The final answer follows the established pattern and can be verified through the
   // ============================================================================
   // 新問題：重置表單
   // ============================================================================
-  document.getElementById('new-problem-btn').addEventListener('click', () => {
-    solveForm.reset();
-    problemFileName_demo = null;
-    answerFileName_demo = null;
-    problemFileInfo.classList.remove('active');
-    answerFileInfo.classList.remove('active');
-    analysisContent.textContent = '';
-    stepsContent.textContent = '';
-    finalContent.textContent = '';
-    showPage('upload');
-  });
+    document.getElementById('new-problem-btn').addEventListener('click', () => {
+      // 重設表單
+      solveForm.reset();
+      problemFileName_demo = null;
+      answerFileName_demo = null;
+    
+      // 隱藏檔案資訊
+      problemFileInfo.classList.remove('active');   // 或 .remove('visible') 看你 CSS
+      answerFileInfo.classList.remove('active');
+    
+      // 清空結果內容（元素存在時才清）
+      if (analysisContent) analysisContent.textContent = '';
+      if (stepsContent) stepsContent.textContent = '';
+      if (finalContent) finalContent.textContent = '';
+    
+      // 回到首頁（上傳頁）
+      showPage('upload');
+    });
 
   // ============================================================================
   // PDF下載功能（演示模式）
