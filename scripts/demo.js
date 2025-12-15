@@ -324,23 +324,181 @@ Key observations:
 
 The problem requires identifying the relationship between input and output forms, and understanding the transformation rules that govern this linguistic phenomenon.`,
         
-        stepByStepSolution: `Step 1: Identify the basic units
-First, we examine the smallest meaningful units in the data and identify their patterns.
-
-Step 2: Compare minimal pairs
-By comparing similar forms with systematic differences, we can isolate the relevant variables.
-
-Step 3: Formulate hypotheses
-Based on the patterns observed, we develop hypotheses about the underlying rules.
-
-Step 4: Test and refine
-We test our hypotheses against all available data and refine our understanding.
-
-Step 5: Generalize the rule
-Once validated, we formulate the general rule that explains all observed patterns.
-
-Step 6: Apply to new cases
-Finally, we apply the discovered rule to solve the specific problem at hand.`,
+        stepByStepSolution: `
+          1. 尋找突破切入點：識別動詞詞根
+          首先，我們通過比較具有相同動詞含義的句子來分離動詞詞根。
+          • "Forgive" (原諒) 出現在句 1, 3, 6, 9, 11。
+          o 1: hitolikaju
+          o 3: yikvtolije
+          o 6: hitolijv
+          o 9: yvjitolikas
+          o 11: yiskitolika
+          o 共同部分： toli。
+          o 結論： 動詞詞根 toli = forgive。
+          • "Bite" (咬) 出現在句 2, 5, 8, 10。
+          o 2: yvskiskahljv
+          o 5: skiskahljes
+          o 8: kvskahljes
+          o 10: jiskahlje
+          o 共同部分： skahl。
+          o 結論： 動詞詞根 skahl = bite。
+          • "Recognise" (認出) 出現在句 4, 7。
+          o 4: vjvyohlkaju
+          o 7: yvhiyohljv
+          o 共同部分： yohl。
+          o 結論： 動詞詞根 yohl = recognise。
+          2. 滾雪球式推導：人稱前綴
+          接下來，我們觀察動詞詞根之前的部分，找出表示「主語 -> 賓語」的人稱前
+          綴。
+          • You(SG) -> Them
+          o 1: hi-toli...
+          o 6: hi-toli...
+          o 7: ...hi-yohl... (在 yv- 之後)
+          o 假設： hi- = You(SG) -> Them。
+          • You(SG) -> Me
+          o 5: ski-skahl...
+          o 2: ...ski-skahl... (在 yv- 之後)
+          o 11: ...ski-toli... (在 yi- 之後)
+          o 假設： ski- = You(SG) -> Me。
+          • I -> Them
+          o 10: ji-skahl...
+          o 9: ...ji-toli... (在 yv- 之後)
+          o 假設： ji- = I -> Them。
+          • I -> You(SG)
+          o 8: kv-skahl...
+          o 3: ...kv-toli... (在 yi- 之後)
+          o 假設： kv- = I -> You(SG)。
+          • I -> You(PL)
+          o 句 4: vjvyohlkaju 翻譯為 "I am recognising youPL again, right?"
+          o 結構分析：v- (待分析前綴) + [人稱] + yohl (詞根) + ...
+          o 如果詞根是 yohl，那麼人稱部分是 jv (因為 y 屬於詞根)。
+          o 假設： jv- = I -> You(PL)。
+          3. 歸納深層規律：前綴系統（Again, If, Not）
+          我們觀察到人稱前綴之前還有其他前綴（yv-
+          , yi-
+          , v-），這些似乎與 "Again"
+          （再次）、"If"（如果）和 "Not"（否定）有關。
+          • "Again" (再次)
+          o 句 4 (Again, Statement): v-jv... -> 前綴 v-。
+          o 句 2 (Again, If): yv-ski... -> 前綴 yv-。
+          o 句 7 (Again, Not): thla yv-hi... -> 前綴 yv-。
+          o 句 9 (Again, Not): thla yv-ji... -> 前綴 yv-。
+          o 觀察： 只要有 "Again"，就會出現 v- 或 yv-。
+          • "If" (如果) 與 "Not" (否定)
+          o 句 3 (If, No Again): yi-kv... -> 前綴 yi-。
+          o 句 11 (Not, No Again): thla yi-ski... -> 前綴 yi-。
+          o 句 5, 6, 8, 10 (Statement/Question, No Again): 無前綴。
+          • 綜合規則：
+          o Realis (現實/陳述/疑問):
+          § 無 "Again": 零前綴 (Ø-)。
+          § 有 "Again": 前綴 v-。
+          o Irrealis (非現實 - If / Negation):
+          § 無 "Again": 前綴 yi-。
+          § 有 "Again": 前綴 yv- (可能是 yi + v 的融合)。
+          o 否定詞： 句首加獨立詞 thla，動詞必須使用 Irrealis 前綴。
+          4. 歸納深層規律：後綴系統（時態、語氣、句型）
+          最後，我們分析動詞詞根之後的部分。
+          • 時態與親知性 (Evidentiality)
+          o Present (現在時):
+          § 1: ...toli-ka...
+          § 4: ...yohl-ka...
+          § 9: ...toli-ka...
+          § 11: ...toli-ka
+          § 標記： -ka。
+          o Past EXP (過去時，親身經歷):
+          § 2: ...skahl-jv
+          § 6: ...toli-jv
+          § 7: ...yohl-jv
+          § 標記： -jv。
+          o Past NXP (過去時，非親身經歷):
+          § 3: ...toli-je
+          § 5: ...skahl-jes
+          § 8: ...skahl-jes
+          § 10: ...skahl-je
+          § 標記： -je。
+          • 句型標記 (Sentence Type)
+          o 這些標記出現在時態後綴的末尾。
+          o Statement (陳述句): 母音結尾 (如 -ka,
+          o Yes/No Question (是非問句): 添加 -s。
+          § 5: -je -> -jes。
+          -jv,
+          -je)。
+          § 8: -je -> -jes。
+          § 9: -ka -> -kas。
+          o Tag Question ("...right?"): 添加 -ju。
+          § 1: -ka -> -kaju。
+          § 4: -ka -> -kaju。
+          5. 系統化總結：切羅基語語法摘要
+          詞序： (Neg) - [Prefix 1] - [Prefix 2] - [Root] - [Suffix 1] - [Suffix 2]
+          1. 否定詞 (Neg): thla (置於動詞前)
+          2. 情態/重複前綴 (Prefix 1):
+          o Ø-: 一般陳述/疑問 (無 Again)
+          o v-: 一般陳述/疑問 + Again
+          o yi-: If / Negative (無 Again)
+          o yv-: If / Negative + Again
+          3. 人稱前綴 (Prefix 2):
+          o ji-: I -> Them
+          o kv-: I -> You(SG)
+          o jv-: I -> You(PL)
+          o hi-: You(SG) -> Them
+          o ski-: You(SG) -> Me
+          4. 動詞詞根 (Root):
+          o toli: forgive
+          o skahl: bite
+          o yohl: recognise
+          5. 時態/親知後綴 (Suffix 1):
+          o -ka: Present
+          o -jv: Past EXP (Experienced)
+          o -je: Past NXP (Not Experienced)
+          6. 句型後綴 (Suffix 2):
+          o Ø: 陳述句 / If 子句
+          o -s: 是非問句
+          o -ju: 附加問句 ("...right?")
+          6. 解答題目
+          Q 9.1 Translate the following into English:
+          1. yijvskahlje
+          o 分析: yi (If) - jv (I->YouPL) - skahl (bite) - je (Past NXP)
+          o 翻譯: if I bit(NXP) you(PL)
+          2. thla yijvyohljvs
+          o 分析: thla (Not) ... yi (Irrealis) - jv (I->YouPL) - yohl (recognise)
+          - jv (Past EXP) - s (Question)
+          o 注意: 這裡 yi 用於否定句。thla ... s 構成否定疑問句。
+          o 翻譯: did I not recognise(EXP) you(PL)?
+          3. vhitolikaju
+          o 分析: v (Again) - hi (You->Them) - toli (forgive) - ka (Present)
+          - ju (Right?)
+          o 翻譯: you(SG) are forgiving them again, right?
+          4. thla yvkvyohlka
+          o 分析: thla (Not) ... yv (Irrealis+Again) - kv (I->YouSG)
+          - yohl (recognise) - ka (Present)
+          o 翻譯: I am not recognising you(SG) again
+          5. yihitolije
+          o 分析: yi (If) - hi (You->Them) - toli (forgive) - je (Past NXP)
+          o 翻譯: if you(SG) forgave(NXP) them
+          Q 9.2 Translate into Cherokee:
+          1. did youSG forgiveNXP them?
+          o 結構: [You->Them] - [forgive] - [Past NXP] - [Question]
+          o 詞素: hi - toli - je - s
+          o 組合: hitolijes
+          2. if I recognisedNXP them again
+          o 結構: [If+Again] - [I->Them] - [recognise] - [Past NXP]
+          o 詞素: yv - ji - yohl - je
+          o 組合: yvjiyohlje
+          3. I forgaveEXP youPL again, right?
+          o 結構: [Again] - [I->YouPL] - [forgive] - [Past EXP] - [Right?]
+          o 詞素: v - jv - toli - jv - ju
+          o 組合: vjvtolijvju
+          4. 5. am I not biting youSG again?
+          o 結構: [Not] ... [Irrealis+Again] - [I->YouSG] - [bite] - [Present] -
+          [Question]
+          o 詞素: thla ... yv - kv - skahl - ka - s
+          o 組合: thla yvkvskahlkas
+          if youSG are biting me
+          o 結構: [If] - [You->Me] - [bite] - [Present]
+          o 詞素: yi - ski - skahl - ka
+          o 組合: yiskiskahlka 
+        
+        `,
         
         finalAnswer: `Based on the systematic analysis, the solution demonstrates a clear pattern where [specific rule applies].
 
